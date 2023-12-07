@@ -39,10 +39,10 @@ class JSWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,
         // register the bridge script that listens for the output
         webView.configuration.userContentController.add(self, name: "logHandler")
         
-        // add custom value to userAgent to identify iOS WebView enviroment
+        // add custom value to userAgent to identify iOS WebView environment
         webView.evaluateJavaScript("navigator.userAgent") { [weak webView] (result, error) in
             if let webView = webView, let userAgent = result as? String {
-                webView.customUserAgent = userAgent + "/iOS WebView"
+                webView.customUserAgent = userAgent + "/iOS_WebView"
             }
         }
     }

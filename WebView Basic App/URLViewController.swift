@@ -31,10 +31,10 @@ class URLViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.navigationDelegate = self
         webView.load(request)
         
-        // add custom value to userAgent to identify iOS WebView enviroment
+        // add custom value to userAgent to identify iOS WebView environment
         webView.evaluateJavaScript("navigator.userAgent") { [weak webView] (result, error) in
             if let webView = webView, let userAgent = result as? String {
-                webView.customUserAgent = userAgent + "/iOS WebView"
+                webView.customUserAgent = userAgent + "/iOS_WebView"
             }
         }
     }
